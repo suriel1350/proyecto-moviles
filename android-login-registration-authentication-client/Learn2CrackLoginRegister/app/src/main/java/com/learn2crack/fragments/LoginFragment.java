@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.learn2crack.Mapa_VW;
+import com.learn2crack.MapsActivity;
 import com.learn2crack.ProfileActivity;
 import com.learn2crack.R;
 import com.learn2crack.model.Response;
@@ -142,7 +144,7 @@ public class LoginFragment extends Fragment {
         mEtEmail.setText(null);
         mEtPassword.setText(null);
 
-        Intent intent = new Intent(getActivity(), ProfileActivity.class);
+        Intent intent = new Intent(getActivity(), MapsActivity.class);
         startActivity(intent);
 
     }
