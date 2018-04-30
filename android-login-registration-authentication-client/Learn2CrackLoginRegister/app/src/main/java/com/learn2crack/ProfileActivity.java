@@ -1,5 +1,6 @@
 package com.learn2crack;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
@@ -34,6 +35,7 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     private TextView mTvDate;
     private Button mBtChangePassword;
     private Button mBtLogout;
+    private Button buttonMap;
 
     private ProgressBar mProgressbar;
 
@@ -51,6 +53,22 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         initViews();
         initSharedPreferences();
         loadProfile();
+
+        buttonMap = (Button) findViewById(R.id.button4);
+        buttonMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                openMap();
+            }
+        });
+
+    }
+
+    public void openMap(){
+
+        Intent intent = new Intent(ProfileActivity.this, MapsActivity.class);
+        startActivity(intent);
+
     }
 
     private void initViews() {
