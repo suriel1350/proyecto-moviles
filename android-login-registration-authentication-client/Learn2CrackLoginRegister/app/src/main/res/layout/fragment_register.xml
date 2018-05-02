@@ -16,13 +16,6 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/activity_vertical_margin">
 
-            <ImageView
-                android:id="@+id/img_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/logo_height"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/logo"/>
-
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/ti_name"
                 android:layout_width="match_parent"
@@ -35,7 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableRight="@drawable/ic_person"
-                    android:hint="Name"
+                    android:hint="Nombre"
                     android:inputType="text" />
 
             </android.support.design.widget.TextInputLayout>
@@ -83,7 +76,7 @@
                 android:layout_marginTop="@dimen/button_margin"
                 android:drawableRight="@drawable/ic_arrow_forward"
                 android:paddingLeft="@dimen/button_padding"
-                android:text="Register" />
+                android:text="Registrarse" />
 
             <TextView
                 android:id="@+id/tv_login"
@@ -91,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/btn_register"
                 android:padding="@dimen/button_margin"
-                android:text="Already Registered ? Login Now !"
+                android:text="¿Ya te has registrado? Ir a Login"
                 android:textAlignment="center" />
 
             <ProgressBar

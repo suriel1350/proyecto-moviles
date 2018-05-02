@@ -19,7 +19,7 @@ module.exports = (app) => {
   app.get('/api/miembro/:idUser', md_auth.ensureAuth, miembrosController.getMiembro);	//Ruta para obtener un miembro
   app.get('/api/probando-controlador', md_auth.ensureAuth,miembrosController.pruebas);  
   app.get('/api/get-image-user/:imageFile', miembrosController.getImageFile);
-  app.put('/api/update-user/:id', md_auth.ensureAuth, miembrosController.updateUser);  
+  app.put('/api/update-user/:id', miembrosController.updateUser);  
 
   //Api Routes para Proyecto
   app.post('/api/proyecto/:idUser/crear', md_auth.ensureAuth,proyectoController.saveProject);

@@ -66,6 +66,15 @@
         android:text="Change Password" />
 
     <Button
+        android:id="@+id/btn_to_map"
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:text="Map" />
+
+    <Button
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

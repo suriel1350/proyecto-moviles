@@ -9,9 +9,13 @@
 import UIKit
 import Mapbox
 
+class MyCustomPointAnnotation: MGLPointAnnotation {
+    var willUseImage: Bool = false
+}
+
 class ProfileViewController: UIViewController, MGLMapViewDelegate  {
     let point = MGLPointAnnotation()
-    let URL_USER_LOGIN = "http://10.50.115.206:8000/api/login"
+    let URL_USER_LOGIN = "http://10.50.118.81:8000/api/login"
     var countdownTimer: Timer!
     @IBOutlet weak var labelUserName: UILabel!
     @IBOutlet weak var mapB: UIView!
@@ -164,13 +168,36 @@ class ProfileViewController: UIViewController, MGLMapViewDelegate  {
         // Add marker `hello` to the map.
         mapView.addAnnotation(station14)
         
-        let station15 = MGLPointAnnotation()
-        station15.coordinate = CLLocationCoordinate2D(latitude: 19.11335440000003, longitude: -98.24882269999995)
-        station15.title = "NSO"
-        station15.subtitle = "Salidas: 07:45, 07:55, 08:05, 08:15, 08:25"
         
-        // Add marker `hello` to the map.
-        mapView.addAnnotation(station15)
+        
+        let crafter1 = MyCustomPointAnnotation()
+        crafter1.coordinate = CLLocationCoordinate2D(latitude: 19.127341, longitude: -98.255458)
+        crafter1.title = "Crafter 1"
+        crafter1.subtitle = "Driver: Mike"
+        crafter1.willUseImage = true
+        
+        let crafter2 = MyCustomPointAnnotation()
+        crafter2.coordinate = CLLocationCoordinate2D(latitude: 19.127750, longitude: -98.253077)
+        crafter2.title = "Crafter 2"
+        crafter2.subtitle = "Driver: John"
+        crafter2.willUseImage = true
+        
+        let crafter3 = MyCustomPointAnnotation()
+        crafter3.coordinate = CLLocationCoordinate2D(latitude: 19.125333, longitude: -98.251719)
+        crafter3.title = "Crafter 3"
+        crafter3.subtitle = "Driver: Alex"
+        crafter3.willUseImage = true
+        
+        let crafter4 = MyCustomPointAnnotation()
+        crafter4.coordinate = CLLocationCoordinate2D(latitude: 19.129423, longitude: -98.252526)
+        crafter4.title = "Crafter 4"
+        crafter4.subtitle = "Driver: Sue"
+        crafter4.willUseImage = true
+        
+        let myPlaces = [crafter1, crafter2, crafter3, crafter4]
+        
+        // Add all annotations to the map all at once, instead of individually.
+        mapView.addAnnotations(myPlaces)
     }
     
     func getLocationCrafters(){
@@ -183,8 +210,50 @@ class ProfileViewController: UIViewController, MGLMapViewDelegate  {
     
     // Use the default marker. See also: our view annotation or custom marker examples.
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-        return nil
+        if let castAnnotation = annotation as? MyCustomPointAnnotation {
+            if (castAnnotation.willUseImage) {
+                return nil;
+            }
+        }
+        
+        // Assign a reuse identifier to be used by both of the annotation views, taking advantage of their similarities.
+        let reuseIdentifier = "reusableDotView"
+        
+        // For better performance, always try to reuse existing annotations.
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        
+        // If there’s no reusable annotation view available, initialize a new one.
+        if annotationView == nil {
+            annotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
+            annotationView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            annotationView?.layer.cornerRadius = (annotationView?.frame.size.width)! / 2
+            annotationView?.layer.borderWidth = 4.0
+            annotationView?.layer.borderColor = UIColor.white.cgColor
+            annotationView!.backgroundColor = UIColor(red:0.03, green:0.80, blue:0.69, alpha:1.0)
+        }
+        
+        return annotationView
     }
+    
+    func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
+        
+        if let castAnnotation = annotation as? MyCustomPointAnnotation {
+            if (!castAnnotation.willUseImage) {
+                return nil;
+            }
+        }
+        
+        // For better performance, always try to reuse existing annotations.
+        var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: "camera")
+        
+        // If there is no reusable annotation image available, initialize a new one.
+        if(annotationImage == nil) {
+            annotationImage = MGLAnnotationImage(image: UIImage(named: "camera")!, reuseIdentifier: "camera")
+        }
+        
+        return annotationImage
+    }
+    
     
     // Allow callout view to appear when an annotation is tapped.
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {

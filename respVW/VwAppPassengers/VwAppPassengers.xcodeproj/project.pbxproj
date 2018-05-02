@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		2D4646C4208ABE6E00D9EB13 /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D4646BC208ABE6500D9EB13 /* user_icon.png */; };
+		2D77491B20997DB500086502 /* iconTwoLoc.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D77491320997DB400086502 /* iconTwoLoc.png */; };
 		2DC4E499208839B50035D0DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC4E498208839B40035D0DB /* MapKit.framework */; };
 		2DC4E49B208845C60035D0DB /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC4E49A208845C60035D0DB /* Mapbox.framework */; };
 		2DC4E49C208845C60035D0DB /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC4E49A208845C60035D0DB /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DCEAFF2208AC8930004EC9D /* loca_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DCEAFEA208AC8930004EC9D /* loca_icon.png */; };
 		2DCEAFF4208ACBBB0004EC9D /* loc.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DCEAFF3208ACBBB0004EC9D /* loc.png */; };
 		2DCEAFF6208ACDC00004EC9D /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCEAFF5208ACDC00004EC9D /* InfoViewController.swift */; };
+		2DD89FF4208E51E30084673B /* crafter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD89FEC208E51E20084673B /* crafter.png */; };
+		2DD89FFC208E647F0084673B /* pisavector.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD89FFB208E647F0084673B /* pisavector.xcassets */; };
+		2DD89FFE208FFF3E0084673B /* camera.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD89FFD208FFF3E0084673B /* camera.xcassets */; };
+		2DD8A002209017170084673B /* ChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD8A001209017170084673B /* ChangePassViewController.swift */; };
 		2DE784B82087CA8100549864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE784B72087CA8100549864 /* AppDelegate.swift */; };
 		2DE784BA2087CA8100549864 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE784B92087CA8100549864 /* ViewController.swift */; };
 		2DE784BD2087CA8100549864 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE784BB2087CA8100549864 /* Main.storyboard */; };
@@ -117,11 +122,16 @@
 
 /* Begin PBXFileReference section */
 		2D4646BC208ABE6500D9EB13 /* user_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_icon.png; sourceTree = "<group>"; };
+		2D77491320997DB400086502 /* iconTwoLoc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconTwoLoc.png; sourceTree = "<group>"; };
 		2DC4E498208839B40035D0DB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2DC4E49A208845C60035D0DB /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = "mapbox-ios-sdk-3/dynamic/Mapbox.framework"; sourceTree = "<group>"; };
 		2DCEAFEA208AC8930004EC9D /* loca_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loca_icon.png; sourceTree = "<group>"; };
 		2DCEAFF3208ACBBB0004EC9D /* loc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loc.png; sourceTree = "<group>"; };
 		2DCEAFF5208ACDC00004EC9D /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		2DD89FEC208E51E20084673B /* crafter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crafter.png; sourceTree = "<group>"; };
+		2DD89FFB208E647F0084673B /* pisavector.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = pisavector.xcassets; sourceTree = "<group>"; };
+		2DD89FFD208FFF3E0084673B /* camera.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = camera.xcassets; sourceTree = "<group>"; };
+		2DD8A001209017170084673B /* ChangePassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassViewController.swift; sourceTree = "<group>"; };
 		2DE784B42087CA8100549864 /* VwAppPassengers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VwAppPassengers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE784B72087CA8100549864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DE784B92087CA8100549864 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,17 +213,22 @@
 			isa = PBXGroup;
 			children = (
 				2DCEAFF5208ACDC00004EC9D /* InfoViewController.swift */,
+				2DD89FEC208E51E20084673B /* crafter.png */,
 				2D4646BC208ABE6500D9EB13 /* user_icon.png */,
 				2DCEAFF3208ACBBB0004EC9D /* loc.png */,
+				2D77491320997DB400086502 /* iconTwoLoc.png */,
 				2DCEAFEA208AC8930004EC9D /* loca_icon.png */,
 				2DE784E52087CBF100549864 /* logoVW.png */,
 				2DE784B72087CA8100549864 /* AppDelegate.swift */,
 				2DE784B92087CA8100549864 /* ViewController.swift */,
 				2DE784BB2087CA8100549864 /* Main.storyboard */,
 				2DE784BE2087CA8300549864 /* Assets.xcassets */,
+				2DD89FFD208FFF3E0084673B /* camera.xcassets */,
+				2DD89FFB208E647F0084673B /* pisavector.xcassets */,
 				2DE784C02087CA8300549864 /* LaunchScreen.storyboard */,
 				2DE784C32087CA8300549864 /* Info.plist */,
 				2DE784E72087D94500549864 /* ProfileViewController.swift */,
+				2DD8A001209017170084673B /* ChangePassViewController.swift */,
 			);
 			path = VwAppPassengers;
 			sourceTree = "<group>";
@@ -417,9 +432,13 @@
 			files = (
 				2DCEAFF4208ACBBB0004EC9D /* loc.png in Resources */,
 				2DE784C22087CA8300549864 /* LaunchScreen.storyboard in Resources */,
+				2DD89FFC208E647F0084673B /* pisavector.xcassets in Resources */,
 				2DE784BF2087CA8300549864 /* Assets.xcassets in Resources */,
+				2DD89FFE208FFF3E0084673B /* camera.xcassets in Resources */,
 				2DE784BD2087CA8100549864 /* Main.storyboard in Resources */,
 				2DE784E62087CBF100549864 /* logoVW.png in Resources */,
+				2D77491B20997DB500086502 /* iconTwoLoc.png in Resources */,
+				2DD89FF4208E51E30084673B /* crafter.png in Resources */,
 				2D4646C4208ABE6E00D9EB13 /* user_icon.png in Resources */,
 				2DCEAFF2208AC8930004EC9D /* loca_icon.png in Resources */,
 			);
@@ -463,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD8A002209017170084673B /* ChangePassViewController.swift in Sources */,
 				2DE784E82087D94500549864 /* ProfileViewController.swift in Sources */,
 				2DE784BA2087CA8100549864 /* ViewController.swift in Sources */,
 				2DCEAFF6208ACDC00004EC9D /* InfoViewController.swift in Sources */,

@@ -14,6 +14,8 @@ class InfoViewController: UIViewController{
     
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var labelUserProfile: UILabel!
+    @IBOutlet weak var labelCarrera: UILabel!
+    @IBOutlet weak var labelMatricula: UILabel!
     
     @IBAction func buttonLogout(_ sender: UIButton) {
         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
@@ -29,11 +31,15 @@ class InfoViewController: UIViewController{
         if let name = defaultValues.string(forKey: "nombre"){
             //setting the name to label
             labelUserProfile.text = name
+            let carrera = defaultValues.string(forKey: "carrera")
+            let matri = defaultValues.string(forKey: "matricula")
+            labelCarrera.text = carrera
+            labelMatricula.text = matri
         }else{
             //send back to login view controller
         }
         let foto = defaultValues.string(forKey: "fotografia")
-        let URL_IMAGE = URL(string: "http://10.50.115.206:8000/api/get-image-user/"+foto!)
+        let URL_IMAGE = URL(string: "http://10.50.118.81:8000/api/get-image-user/"+foto!)
         
         let session = URLSession(configuration: .default)
         

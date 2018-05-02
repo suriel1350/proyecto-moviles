@@ -11,7 +11,7 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    let URL_USER_LOGIN = "http://10.50.115.206:8000/api/login"
+    let URL_USER_LOGIN = "http://10.50.118.81:8000/api/login"
     
     //the defaultvalues to store user data
     let defaultValues = UserDefaults.standard
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
                         print(resError)
                         //if there is no error
                          if(resError == "false"){
-                            
+                            let pass = self.textFieldPassword.text
                             //getting the user from response
                             let user = jsonData.value(forKey: "user") as! NSDictionary
                             
@@ -58,6 +58,8 @@ class ViewController: UIViewController {
                             self.defaultValues.set(matricula, forKey: "matricula")
                             self.defaultValues.set(carrera, forKey: "carrera")
                             self.defaultValues.set(fotografia, forKey: "fotografia")
+                            
+                            self.defaultValues.set(pass, forKey: "password")
                             
                             //switching the screen
                             

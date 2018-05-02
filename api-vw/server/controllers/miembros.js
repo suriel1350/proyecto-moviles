@@ -278,7 +278,7 @@ function updateUser(req, res){
 							    .findById(userId)
 							    .then(user => {
 							      if (!user) {
-							        return res.status(404).send({message: 'El miembro no existe',});
+							        return res.status(404).send({error: 'true', message: 'El miembro no existe',});
 							      }
 							      else{
 								      return user
@@ -290,16 +290,16 @@ function updateUser(req, res){
 									        password: pass,
 								        })
 								        .then(() => {
-								        	res.status(200).send(user)			        	
+								        	res.status(200).send({error: 'false', user})			        	
 								        	  
 								        })  // Send back the updated user
-								        .catch((error) => res.status(400).send({message: 'Error en Update'}));
+								        .catch((error) => res.status(400).send({error: 'true', message: 'Error en Update'}));
 								  }
 							    })
-							    .catch((error) => res.status(400).send(error));
+							    .catch((error) => res.status(400).send({error: 'true', message: 'ocurrio un error'}));
 
 						}else{
-							res.status(500).send({message: 'Rellena todos los campos'});
+							res.status(500).send({error: 'true', message: 'Rellena todos los campos'});
 						}
 					});
 				}else{
